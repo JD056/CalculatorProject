@@ -1,0 +1,82 @@
+
+
+
+ import 'dart:io'; // For Input
+
+class Calculator {
+  double num1;
+  double num2;
+
+  Calculator(this.num1, this.num2);
+
+  double add() {
+    return num1 + num2;
+  }
+
+  double subtract() {
+    return num1 - num2;
+  }
+
+  double multiply() {
+    return num1 * num2;
+  }
+
+  double divide() {
+    if (num2 != 0) {
+      return num1 / num2;
+    } else {
+      print("Cannot divide by zero.");
+      return double.nan;
+    }
+  }
+}
+
+void main() {
+  // Take user input for two numbers
+  print("Enter the first number:");
+  double number1 = double.parse(stdin.readLineSync()!);
+
+  print("Enter the second number:");
+  double number2 = double.parse(stdin.readLineSync()!);
+
+  // Create an instance of the Calculator class
+  Calculator calculator = Calculator(number1, number2);
+
+  // Menu for operations
+  print("\nSelect operation:");
+  print("1. Add");
+  print("2. Subtract");
+  print("3. Multiply");
+  print("4. Divide");
+
+  // Take user choice
+  int choice = int.parse(stdin.readLineSync()!);
+
+  // Perform operation based on user choice
+  switch (choice) {
+    case 1:
+      print("Result: ${calculator.add()}");
+      break;
+    case 2:
+      print("Result: ${calculator.subtract()}");
+      break;
+    case 3:
+      print("Result: ${calculator.multiply()}");
+      break;
+    case 4:
+      print("Result: ${calculator.divide()}");
+      break;
+    default:
+      print("Invalid choice"); // If choice does not meets given conditions
+  }
+}
+
+  
+
+
+
+
+
+
+
+       
